@@ -10,7 +10,8 @@ function hash(string) {
   });
 }
 
-document.getElementById("signin_btn").addEventListener("click", (e) => {
+document.getElementById("loginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
     var username = document.getElementById("username").value // Get Username
     var password = document.getElementById("password").value // Get Password
     
@@ -28,7 +29,7 @@ document.getElementById("signin_btn").addEventListener("click", (e) => {
                 document.cookie = `token=${token}; path=/`
                 document.cookie = `userID=${xhr.responseText}; path=/`
             })   
-            window.location.assign("/app")
+            window.location.assign("/")
         } else {
             alert(xhr.responseText)
         }

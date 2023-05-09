@@ -1,0 +1,26 @@
+body {
+    background-color: #E8F1F2
+}
+
+.center {
+    margin: auto;
+    text-align: center
+}
+
+img {
+    height: 50vh;
+    padding-bottom: 10px;
+}
+
+form {
+    margin: auto;
+    max-width: 475px;
+}
+
+.login {
+    background-color: #59dedd;
+}
+
+.login:hover {
+    background-color: #3ab0af;
+}

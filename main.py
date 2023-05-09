@@ -54,14 +54,6 @@ def verify_true_user(req):
 
 @app.route("/")
 def index():
-    """ Default Route - Serves Index.html"""
-    sender_ip = request.remote_addr
-    logs.info(f"{sender_ip} accessed /")
-    return render_template("index.html")
-
-
-@app.route('/app')
-def app_route():
     """ Main App Route """
     # Get cookie data
     valid_user = verify_true_user(request)

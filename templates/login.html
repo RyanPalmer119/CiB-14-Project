@@ -3,31 +3,31 @@
 
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='signin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 
 {% block navbar %}{% endblock %}
 
 {% block content %}
-<body class="text-center">
-    <main class="form-signin w-100 m-auto">
-        <h1 class="h3 mb-3 fw-normal">Please Sign In</h1>
-        <div class="form-floating">
-            <input type="text" class="form-control" id="username" placeholder="user">
-            <label for="username">Username</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="password" placeholder="Password">
-            <label for="password">Password</label>
-        </div>
-        <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
-        <button class="w-100 btn btn-lg btn-primary" id="signin_btn">Sign In</button>
-        <a href="/signup" class="w-100 btn btn-lg btn-success">Or Sign Up Instead!</a>
-    </main>
-    <script src="{{ url_for('static', filename='signin.js') }}"/>
+<body>
+    <div class="center">
+        <img class="" src="{{ url_for('static', filename='img/dwk_logo.png') }}">
+        <form id="loginForm">
+            <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="username" placeholder="user">
+                <label for="username">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <label for="password">Password</label>
+            </div>
+            <div class="mb-3">
+                <a href="/signup" class="btn login">Sign Up</a>
+                <button type="submit" class="btn login">Log In</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='login.js') }}"/>
 </body>
 {% endblock %}

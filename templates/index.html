@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <h1>Welcome to the DWK Resiliency System</h1>
+    Please select an option
+    <a href="/app" class="btn btn-success">To The App!</a>
+    <a href="/signup" class="btn btn-success">Sign Up!</a>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+{% endblock %}

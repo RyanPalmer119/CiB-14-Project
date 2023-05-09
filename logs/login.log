@@ -1,0 +1,161 @@
+2023-05-09 11:51:41,653 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 11:51:41,919 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 11:55:30,085 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 11:55:43,604 | INFO | login - 172.31.128.1 is logging in as admin
+2023-05-09 11:55:43,605 | INFO | login - Login Successful for admin
+2023-05-09 11:55:47,540 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 11:55:47,778 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 11:55:58,940 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 11:56:02,399 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 11:56:09,915 | WARNING | login - 172.31.128.1 Attempting: Create User james as op
+2023-05-09 11:56:09,926 | INFO | login - New User from 172.31.128.1: 6da64a7f-ecd6-4d09-b69f-5e30d9e6cb9a, james, op || Successfully Added
+2023-05-09 12:20:33,781 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 12:20:34,403 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:09:12,088 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:09:12,492 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:09:17,709 | INFO | login - 172.31.128.1 is logging in as tets
+2023-05-09 13:09:17,709 | WARNING | login - Login Unsuccessful for tets from 172.31.128.1
+2023-05-09 13:19:56,680 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:20:01,057 | INFO | login - 172.31.128.1 is logging in as admin
+2023-05-09 13:20:01,058 | INFO | login - Login Successful for admin
+2023-05-09 13:20:03,448 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:20:07,828 | INFO | login - 172.31.128.1 is logging in as operate
+2023-05-09 13:20:07,829 | INFO | login - Login Successful for operate
+2023-05-09 13:20:09,940 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:20:13,685 | INFO | login - 172.31.128.1 is logging in as test
+2023-05-09 13:20:13,686 | WARNING | login - Login Unsuccessful for test from 172.31.128.1
+2023-05-09 13:30:00,394 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:30:11,448 | WARNING | login - 172.31.128.1 Attempting: Create User james as Resiliency
+2023-05-09 13:30:11,457 | INFO | login - New User from 172.31.128.1: 5c5ac279-a335-4ed0-a4f5-a96b28c884df, james, Resiliency || Successfully Added
+2023-05-09 13:30:13,583 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:30:15,675 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:30:22,594 | WARNING | login - 172.31.128.1 Attempting: Create User james as Application
+2023-05-09 13:30:22,601 | INFO | login - New User from 172.31.128.1: 8850e1c6-8939-4884-9baf-13970b097e79, james, Application || Successfully Added
+2023-05-09 13:30:27,346 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:30:32,775 | INFO | login - 172.31.128.1 is logging in as james
+2023-05-09 13:30:32,775 | INFO | login - Login Successful for james
+2023-05-09 13:30:35,012 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:30:39,345 | INFO | login - 172.31.128.1 is logging in as james
+2023-05-09 13:30:39,346 | WARNING | login - Login Unsuccessful for james from 172.31.128.1
+2023-05-09 13:31:14,131 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:31:14,466 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:31:20,364 | INFO | login - 172.31.128.1 is logging in as asd
+2023-05-09 13:31:20,365 | WARNING | login - Login Unsuccessful for asd from 172.31.128.1
+2023-05-09 13:32:33,863 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:32:34,221 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:32:51,887 | WARNING | login - 172.31.128.1 Attempting: Create User me as Application
+2023-05-09 13:32:51,891 | INFO | login - New User from 172.31.128.1: 7b6c123d-5ec3-426d-814c-5537935078d7, me, Application || Successfully Added
+2023-05-09 13:32:52,399 | WARNING | login - 172.31.128.1 Attempting: Create User me as Application
+2023-05-09 13:32:52,403 | INFO | login - New User from 172.31.128.1: 9872a51b-e387-41ae-861e-c4f409187ceb, me, Application || Successfully Added
+2023-05-09 13:32:53,409 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:32:53,906 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:33:01,554 | INFO | login - 172.31.128.1 is logging in as me
+2023-05-09 13:33:01,555 | INFO | login - Login Successful for me
+2023-05-09 13:33:02,523 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:33:02,899 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:39:19,909 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:39:23,567 | INFO | login - 172.31.128.1 is logging in as admin
+2023-05-09 13:39:23,568 | INFO | login - Login Successful for admin
+2023-05-09 13:39:26,271 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 13:39:29,707 | INFO | login - 172.31.128.1 is logging in as test
+2023-05-09 13:39:29,708 | WARNING | login - Login Unsuccessful for test from 172.31.128.1
+2023-05-09 13:51:47,403 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:51:53,659 | WARNING | login - 172.31.128.1 Attempting: Create User james as Resiliency
+2023-05-09 13:51:53,659 | CRITICAL | login - An Error Occured:: '>' not supported between instances of 'sqlite3.Cursor' and 'int'
+2023-05-09 13:53:18,089 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:53:22,137 | WARNING | login - 172.31.128.1 Attempting: Create User james as Application
+2023-05-09 13:53:22,138 | CRITICAL | login - An Error Occured:: '>' not supported between instances of 'sqlite3.Cursor' and 'int'
+2023-05-09 13:53:43,819 | WARNING | login - 172.31.128.1 Attempting: Create User james as Application
+2023-05-09 13:53:43,820 | CRITICAL | login - An Error Occured:: '>' not supported between instances of 'sqlite3.Cursor' and 'int'
+2023-05-09 13:53:45,724 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:53:49,670 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 13:53:49,672 | CRITICAL | login - An Error Occured:: '>' not supported between instances of 'sqlite3.Cursor' and 'int'
+2023-05-09 13:54:58,421 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 13:54:58,422 | CRITICAL | login - An Error Occured:: '>' not supported between instances of 'list' and 'int'
+2023-05-09 13:55:18,285 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 13:55:21,833 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 13:55:21,834 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 13:57:57,005 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 13:57:57,006 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 14:00:06,391 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 14:00:06,392 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 14:01:14,256 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 14:01:14,257 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 14:01:32,331 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 14:01:32,331 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 14:04:48,830 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 14:04:48,831 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 14:05:26,054 | WARNING | login - 172.31.128.1 Attempting: Create User james1 as Operate
+2023-05-09 14:05:26,058 | INFO | login - New User from 172.31.128.1: 694c1d71-c93d-4bed-adb0-9a64492ab0eb, james1, Operate || Successfully Added
+2023-05-09 14:05:48,131 | WARNING | login - 172.31.128.1 Attempting: Create User james1 as Operate
+2023-05-09 14:05:48,132 | DEBUG | login - 172.31.128.1 used a taken username: james1 
+2023-05-09 14:05:56,707 | WARNING | login - 172.31.128.1 Attempting: Create User james2 as Operate
+2023-05-09 14:05:56,711 | INFO | login - New User from 172.31.128.1: 3f886715-56b7-4c76-a5d5-ecf3c1b046b9, james2, Operate || Successfully Added
+2023-05-09 14:07:23,179 | WARNING | login - 172.31.128.1 Attempting: Create User james2 as Operate
+2023-05-09 14:07:23,180 | DEBUG | login - 172.31.128.1 used a taken username: james2 
+2023-05-09 14:07:25,188 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:07:30,029 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 14:07:30,029 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 14:14:17,257 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:14:19,019 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:14:21,465 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:14:55,931 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:14:59,528 | INFO | login - 172.31.128.1 is logging in as admin
+2023-05-09 14:14:59,528 | INFO | login - 172.31.128.1 Login Successful for admin
+2023-05-09 14:15:04,561 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:15:20,279 | INFO | login - 172.31.128.1 is logging in as operate
+2023-05-09 14:15:20,279 | INFO | login - 172.31.128.1 Login Successful for operate
+2023-05-09 14:15:24,547 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:15:26,872 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:15:30,590 | WARNING | login - 172.31.128.1 Attempting: Create User james as Select your team
+2023-05-09 14:15:30,596 | INFO | login - New User from 172.31.128.1: fa03381f-5634-4ca0-b702-5690112bd1b9, james, Select your team || Successfully Added
+2023-05-09 14:15:36,181 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:15:38,533 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:15:44,131 | WARNING | login - 172.31.128.1 Attempting: Create User james as Operate
+2023-05-09 14:15:44,131 | DEBUG | login - 172.31.128.1 used a taken username: james 
+2023-05-09 14:17:22,523 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:17:30,664 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:17:41,551 | WARNING | login - 172.31.128.1 Attempting: Create User james2 as Resiliency
+2023-05-09 14:17:41,559 | INFO | login - New User from 172.31.128.1: 69dd6494-11bf-4b8e-818e-eec13aa8489c, james2, Resiliency || Successfully Added
+2023-05-09 14:17:44,107 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:17:48,521 | INFO | login - 172.31.128.1 is logging in as james2
+2023-05-09 14:17:48,521 | INFO | login - 172.31.128.1 Login Successful for james2
+2023-05-09 14:17:51,045 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:17:55,032 | INFO | login - 172.31.128.1 is logging in as james2
+2023-05-09 14:17:55,032 | WARNING | login - Login Unsuccessful for james2 from 172.31.128.1
+2023-05-09 14:19:58,276 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:20:04,839 | INFO | login - 172.31.128.1 - Accessed Signup Page
+2023-05-09 14:20:28,157 | WARNING | login - 172.31.128.1 Attempting: Create User bruhhhh as Operate
+2023-05-09 14:20:28,163 | INFO | login - New User from 172.31.128.1: 80ac6239-be7d-439f-b832-26b83ab2154a, bruhhhh, Operate || Successfully Added
+2023-05-09 14:20:33,945 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:20:45,760 | INFO | login - 172.31.128.1 is logging in as bruhhh
+2023-05-09 14:20:45,761 | WARNING | login - Login Unsuccessful for bruhhh from 172.31.128.1
+2023-05-09 14:20:54,420 | INFO | login - 172.31.128.1 is logging in as bruhhhh
+2023-05-09 14:20:54,420 | INFO | login - 172.31.128.1 Login Successful for bruhhhh
+2023-05-09 14:24:18,594 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:31:54,503 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:31:56,486 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:32:00,278 | INFO | login - 172.31.128.1 is logging in as james
+2023-05-09 14:32:00,279 | INFO | login - 172.31.128.1 Login Successful for james
+2023-05-09 14:32:00,640 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:32:23,636 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:32:25,483 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:32:27,783 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:32:32,288 | INFO | login - 172.31.128.1 is logging in as james
+2023-05-09 14:32:32,289 | INFO | login - 172.31.128.1 Login Successful for james
+2023-05-09 14:32:32,640 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:33:11,689 | INFO | login - 172.31.128.1 is logging in as james
+2023-05-09 14:33:11,689 | INFO | login - 172.31.128.1 Login Successful for james
+2023-05-09 14:33:12,060 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:34:37,764 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:34:41,671 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:34:42,721 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:34:59,845 | INFO | login - 172.31.128.1 is logging in as james
+2023-05-09 14:34:59,845 | INFO | login - 172.31.128.1 Login Successful for james
+2023-05-09 14:35:03,294 | INFO | login - 172.31.128.1 - Accessed Login Page
+2023-05-09 14:35:07,870 | INFO | login - 172.31.128.1 is logging in as test
+2023-05-09 14:35:07,870 | WARNING | login - Login Unsuccessful for test from 172.31.128.1
+2023-05-09 14:35:15,535 | INFO | login - 172.31.128.1 is logging in as admin
+2023-05-09 14:35:15,536 | WARNING | login - Login Unsuccessful for admin from 172.31.128.1
+2023-05-09 14:36:12,882 | INFO | login - 172.31.128.1 is logging in as admin
+2023-05-09 14:36:12,882 | INFO | login - 172.31.128.1 Login Successful for admin

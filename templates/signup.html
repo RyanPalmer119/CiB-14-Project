@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}Log In{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <main class="form-signin w-100 m-auto">
+        <h1 class="h3 mb-3 fw-normal">Sign Up!</h1>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="username" placeholder="user">
+            <label for="username">Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            <label for="password">Password</label>
+        </div>
+        <div class="form-floating">
+            <select class="form-select" id="team-select" aria-label="Default select example">
+                <option selected disabled value="error">Select your team</option>
+                <option value="Application">Application</option>
+                <option value="Operate">Operate</option>
+                <option value="Resiliency">Resilency</option>
+            </select>
+            <label for="team-select">Select Team</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-success" id="signup_btn">Sign Up!</button>
+    </main>
+    <script src="{{ url_for('static', filename='signup.js') }}"></script>
+</body>
+{% endblock %}

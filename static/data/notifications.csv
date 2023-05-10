@@ -1,0 +1,11 @@
+notification_id,too,sender,message,read
+1,3,6,Update TRAP,FALSE
+2,8,7,Approve TRAP,FALSE
+3,2,5,Update TRAP,FALSE
+4,5,6,Approve TRAP,FALSE
+5,1,4,Update TRAP,FALSE
+6,2,9,Approve TRAP,FALSE
+7,10,12,Update TRAP,FALSE
+8,3,15,Approve TRAP,FALSE
+9,14,13,Update TRAP,FALSE
+10,13,11,Approve TRAP,FALSE

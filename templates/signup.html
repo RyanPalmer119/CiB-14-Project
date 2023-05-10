@@ -14,7 +14,11 @@
         <img class="" src="{{ url_for('static', filename='img/dwk_logo.png') }}">
         <form id="signUpForm">
             <div class="form-floating mb-1">
-                <input type="text" class="form-control" id="username" placeholder="user">
+                <input type="text" class="form-control" id="name" placeholder="Name">
+                <label for="name">Name</label>
+            </div>
+            <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="username" placeholder="Username">
                 <label for="username">Username</label>
             </div>
             <div class="form-floating mb-1">
@@ -24,9 +28,9 @@
             <div class="form-floating mb-3">
                 <select class="form-select" id="team-select" aria-label="Default select example">
                     <option selected disabled value="error">Select your team</option>
-                    <option value="Application">Application</option>
-                    <option value="Operate">Operate</option>
-                    <option value="Resiliency">Resilency</option>
+                    <option value="app">Application</option>
+                    <option value="op">Operate</option>
+                    <option value="res">Resilency</option>
                 </select>
                 <label for="team-select">Select Team</label>
             </div>

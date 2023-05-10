@@ -15,14 +15,17 @@ format = logging.Formatter("%(asctime)s | %(levelname)s | %(name)s - %(message)s
 file.setFormatter(format)
 logs.addHandler(file)
 
-
-
 @app.route("/db/test")
 def test_db():
     """ Runs the handler test function - Returns all data in the user table """
     src_ip = request.remote_addr
     logs.debug(f"{src_ip} - DB Test")
-    return test()
+    result = []
+    tables = ["users", "notifications", "applications", "app_staff_link", "app_tests", "traps", "data_center", "data_center_tests"]
+    for table in tables: 
+        print(table)
+        result.append(test(table))
+    return result
 
 @app.route("/db/create_schema")
 def create_db_schema():

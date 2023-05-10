@@ -1,0 +1,21 @@
+app_id,app_name,primary_location,alt_location,data_center_id,trap_id,trap_approved
+1,DWK-CardService,1,3,1,81,Yes
+2,DWK-MoneyWire,10,3,10,82,No
+3,DWK-Transfer,6,3,6,83,No
+4,DWK-CustomerPortal,1,3,1,84,Yes
+5,DWK-CashFlow,4,2,4,85,Yes
+6,DWK-BusinessCard,1,2,1,86,Yes
+7,DWK-Depository,7,2,7,87,No
+8,DWK-Crytpo,4,2,4,88,No
+9,DWK-OnlineWallet,8,2,8,89,No
+10,DWK-PayMate,4,2,4,90,No
+11,DWK-SecureVault,1,2,1,91,Yes
+12,DWK-InvestmentServices,4,2,4,92,Yes
+13,DWK-FundManagement ,6,2,6,93,No
+14,DWK-MobileApp,3,2,3,94,No
+15,DWK-QuickTrade,7,2,7,95,Yes
+16,DWK-Markets,1,9,1,96,Yes
+17,DWK-MarketMaker,2,9,2,97,No
+18,DWK-CFD,3,9,3,98,No
+19,DWK-BondMarket,4,9,4,99,No
+20,DWK-WealthManager,8,9,8,100,Yes

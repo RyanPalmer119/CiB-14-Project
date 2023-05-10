@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}Application Team Dashboard{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <!-- Add Head Code Here -->
+    <script src="{{ url_for('static', filename='res_team.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="row text-center">
+        <h1>Resiliency Team Dashboard</h1>
+    </div>
+    <hr>
+    <div class="container">
+        <div>
+            <div class="row">
+                <h3 class="col-6">Overview Application Entries Report</h3>
+                <div class="col-3">
+                    <span class="badge bg-success">Testing Compliant <span>{{ compliant }}</span></span>
+                </div>
+                <div class="col-3">
+                    <span class="badge bg-danger">Testing Non-Compliant <span>{{ noncompliant }}</span></span>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th style="width: 10vw">App ID</th>
+                        <th>App Name</th>
+                        <th style="width: 10vw">Compliance</th>
+                        <th style="width: 10vw"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for app in apps %}
+                        <tr onclick="open_details('{{app[0][0]}}')" class="align-middle">
+                            <td>{{app[0][0]}}</td> <!-- App ID -->
+                            <td>{{app[0][1]}}</td> <!-- App Name -->
+                            {% if app[1] %}
+                                <td><span class="badge bg-success">Compliant</span></td>
+                            {% else %}
+                                <td><span class="badge bg-danger">Non-Compliant</span></td>
+                            {% endif %}
+                            <td><button style="width: 100%;" class="btn btn-sm btn-primary">Open</button></td> <!-- App Button-->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div> 
+{% endblock %}

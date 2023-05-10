@@ -41,12 +41,12 @@ def api_login_test():
     logs.info(f"{src_ip} is logging in as { body['username'] }")
 
     
-    userID, user_pass_hash = db_handler.get_passhash(body["username"]) # Get userID and Passhash from inputted Username
+    userID, role, user_pass_hash = db_handler.get_passhash(body["username"]) # Get userID and Passhash from inputted Username
     inputted_pass_hash = body["passhash"] # Get user inputted passhash
     
     if inputted_pass_hash == user_pass_hash: # If Valid
         logs.info(f"{ src_ip } Login Successful for { body['username'] }")
-        return userID, 200 # Return UserID for UserID Cookie
+        return {"id": userID, "role": role}, 200 # Return UserID for UserID Cookie
     else: 
         # Invalid Login
         logs.warning(f"Login Unsuccessful for { body['username'] } from { src_ip }")
@@ -58,6 +58,7 @@ def create_new_user():
     # Get all the variables
     body = json.loads(request.data)
     username = body["username"]
+    name = body["name"]
     passhash = body["passhash"]
     role = body["role"]
     src_ip = request.remote_addr
@@ -72,7 +73,7 @@ def create_new_user():
             logs.debug(f"{src_ip} used a malformed request || not hashed")
             return "Not Hashed", 400
         new_uuid = str(uuid4())
-        db_handler.new_user(new_uuid, username, passhash, role) # Create the new user
+        db_handler.new_user(new_uuid, username, name, passhash, role) # Create the new user
         logs.info(f"New User from {src_ip}: {new_uuid}, {username}, {role} || Successfully Added")
         return new_uuid, 200
     except Exception as err:

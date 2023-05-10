@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}ADMIN PANEL{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <!-- Add Head Code Here -->
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>ADMIN PANEL</h1>
+    <button class="btn btn-lg btn-danger" onclick="resetDB()"> RESET THE DATABASE </button>
+
+{% endblock %}

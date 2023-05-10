@@ -9,16 +9,19 @@
     </head>
     <body>
         {% block navbar %}
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg" style="background-color: #283b4d !important">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">To-Do</a>
+                <a class="navbar-brand" style="color: #ffffff" href="/">DWK Resiliency Management</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
                     {% block navbarContents %}{% endblock %}
+                    <div class="d-flex">
+                        <button class="btn btn-danger" id="logout">Log Out</button>
+                    </div>
                 </div>
             </div>
         </nav>
         {% endblock %}
-        <div class="container" style="margin-top: 20px;" id="content">
+        <div style="margin-top: 20px; margin-left: 20px; margin-right: 20px" id="content">
             {% block content %}{% endblock %}
         </div>
         <script src="{{ url_for('static', filename='main.js') }}"></script>

@@ -14,6 +14,7 @@ document.getElementById("signUpForm").addEventListener("submit", (e) => {
     e.preventDefault();
     var username = document.getElementById("username").value // Get Username
     var password = document.getElementById("password").value // Get Password
+    var name = document.getElementById("name").value // Get Username
     var role = document.getElementById("team-select").value // Get Password
     if (role === "error") {
         alert("Please select a Role Group")
@@ -27,6 +28,7 @@ document.getElementById("signUpForm").addEventListener("submit", (e) => {
     hash(password).then(hex_passhash => { // Hash Password
         var data = {
             "username": username,
+            "name": name,
             "passhash": hex_passhash,
             "role": role
         }

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Resiliency Team Dashboard{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <!-- Add Head Code Here -->
+    <script src="{{ url_for('static', filename='res_team.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="row text-center">
+        <h1>DWK Help Center</h1>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="card card-body">
+                    <h3>Log Files</h3>
+                    <button class="btn btn-primary m-1" onclick="window.location.assign('/logs/application.log')">Application</button>
+                    <button class="btn btn-primary m-1" onclick="window.location.assign('/logs/login.log')">Logins</button>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card card-body">
+                    <h3>Login Help</h3>
+                    
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card card-body">
+                    <h3>TRAP Help</h3>
+                    
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card card-body">
+                    <h3>Another Help</h3>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div> 
+{% endblock %}

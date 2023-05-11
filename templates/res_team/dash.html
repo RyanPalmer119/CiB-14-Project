@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %}Application Team Dashboard{% endblock %}
+{% block title %}Resiliency Team Dashboard{% endblock %}
 
 {% block head %}
     {{ super() }}
@@ -13,40 +13,100 @@
     </div>
     <hr>
     <div class="container">
-        <div>
-            <div class="row">
-                <h3 class="col-6">Overview Application Entries Report</h3>
-                <div class="col-3">
-                    <span class="badge bg-success">Testing Compliant <span>{{ compliant }}</span></span>
-                </div>
-                <div class="col-3">
-                    <span class="badge bg-danger">Testing Non-Compliant <span>{{ noncompliant }}</span></span>
+        <div class="row">
+            <div class="col-7">
+                <div class="card card-body">
+                    <h3>Overview Application Entries Report</h3>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="badge bg-success">Testing Compliant <span>{{ compliant }}</span></span>
+                        </div>
+                        <div class="col-4">
+                            <span class="badge bg-warning">Awaiting Approval <span>x</span></span>
+                        </div>
+                        <div class="col-4">
+                            <span class="badge bg-danger">Testing Non-Compliant <span>{{ noncompliant }}</span></span>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width: 4vw">App ID</th>
+                                <th>App Name</th>
+                                <th style="width: 10vw">Compliance</th>
+                                <th style="width: 6vw"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for app in apps %}
+                                <tr onclick="open_details('{{app[0][0]}}')" class="align-middle">
+                                    <td>{{app[0][0]}}</td> <!-- App ID -->
+                                    <td>{{app[0][1]}}</td> <!-- App Name -->
+                                    {% if app[1] %}
+                                        <td><span class="badge bg-success">Compliant</span></td>
+                                    {% else %}
+                                        <td><span class="badge bg-danger">Non-Compliant</span></td>
+                                    {% endif %}
+                                    <td><button style="width: 100%;" class="btn btn-sm btn-primary">Open</button></td> <!-- App Button-->
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th style="width: 10vw">App ID</th>
-                        <th>App Name</th>
-                        <th style="width: 10vw">Compliance</th>
-                        <th style="width: 10vw"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for app in apps %}
-                        <tr onclick="open_details('{{app[0][0]}}')" class="align-middle">
-                            <td>{{app[0][0]}}</td> <!-- App ID -->
-                            <td>{{app[0][1]}}</td> <!-- App Name -->
-                            {% if app[1] %}
-                                <td><span class="badge bg-success">Compliant</span></td>
-                            {% else %}
-                                <td><span class="badge bg-danger">Non-Compliant</span></td>
-                            {% endif %}
-                            <td><button style="width: 100%;" class="btn btn-sm btn-primary">Open</button></td> <!-- App Button-->
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            <div class="col-5">
+                <div class="card card-body">
+                    <h3>Datacenter Tests</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Test ID</th>
+                                <th>Date</th>
+                                <th>Complete</th>
+                                <th>Result</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dc_test in dc_tests %}
+                                <tr onclick="alert('Details on test {{dc_test.id}}')">
+                                    <th>{{ dc_test.id }}</th>
+                                    <td>{{ dc_test.date }}</td>
+                                    {% if dc_test.complete %}
+                                        <td><span class="badge bg-success">Complete</span></td>
+                                        {% if dc_test.result %}
+                                            <td><span class="badge bg-success">Success</span></td>
+                                        {% else %}
+                                            <td><span class="badge bg-danger">Failure</span></td>    
+                                        {% endif %}
+                                    {% else %}
+                                        <td><span class="badge bg-danger">Not Complete</span></td>   
+                                        <td><span class="badge bg-info">N/a</span></td>
+                                    {% endif %}
+                                    <td><button class="btn btn-primary btn-sm">Details</button></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="card card-body">
+                    <h3>Standalone Tests</h3>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Test ID</th>
+                                <th>Date</th>
+                                <th>Complete</th>
+                                <th>Result</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="alert alert-info">Not Implemented<div>
+                </div>
+            </div>
         </div>
+        
     </div> 
 {% endblock %}

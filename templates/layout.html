@@ -15,11 +15,40 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
                     {% block navbarContents %}{% endblock %}
                     <div class="d-flex">
-                        <button class="btn btn-danger" id="logout">Log Out</button>
+                        <button class="btn btn-primary ms-2 position-relative" data-bs-toggle="modal" data-bs-target="#notifModal" onclick="show_notifs()">
+                            Notifications
+                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </button>
+                        <button class="btn btn-info ms-2" onclick="window.location.assign('/docs')">Help</button>
+                        <button class="btn btn-danger ms-2" id="logout">Log Out</button>
                     </div>
                 </div>
             </div>
         </nav>
+        <div class="modal fade" id="notifModal" tabindex="-1" aria-labelledby="notifModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="notifModal">Notifications</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="notif-body">
+                    </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
         {% endblock %}
         <div style="margin-top: 20px; margin-left: 20px; margin-right: 20px" id="content">
             {% block content %}{% endblock %}

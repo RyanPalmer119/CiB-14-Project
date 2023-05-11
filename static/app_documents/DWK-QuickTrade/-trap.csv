@@ -1,0 +1,22 @@
+TEST TEST TEST TEST TEST
+Reference system updates
+"Informing / validating the production unavailability with Technology Teams, Business teams & User community"
+Pre-invocation decisions
+Managing Jobs Schedules
+Hardware Health Checks
+Drawing Passwords
+Bringing down services and servers
+"Splitting SRDF Replication, NAS replication or other Storage Replication (Dataguard)"
+Shutting down the Production/Primary site monitoring
+Drawing Passwords
+Bringing up services and servers
+Mounting SAN/NAS storages and bringing them to online
+"Configuring Data Reverse Replication, Dataguard tasks (SR)"
+Configuring the Recovery specific configuration files (example: Non-UM MQ configuration)
+Managing Jobs
+Switching DR Pairs
+Switching Load Balancers (local or Global) / Diverting user traffic to recovery location
+Verifying the overall Hardware health check by the tech teams
+AD Teams/ Production support checking the application overall health and data integrate
+Turn over for Business
+Verifying the Primary/Production environment is not active or functioning (DR)

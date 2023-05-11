@@ -141,9 +141,10 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Status</th>
+                                <th></th>
                             </tr>
                         </thead>
-                        <tr>
+                        <tr onclick="window.location.assign('/trap_viewer/{{ app.id }}')">
                             <td>{{app.trap.date}}</td>
                             <td>
                                 {% if app.trap.approved_bool %}
@@ -152,6 +153,7 @@
                                     <span class="badge bg-danger">Not Approved</span>
                                 {% endif %}
                             </td>
+                            <td><button class="btn btn-sm btn-success">View</button></td>
                         </tr>
                     </table>
                 </div>

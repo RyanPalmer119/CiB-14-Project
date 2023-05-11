@@ -135,7 +135,7 @@ def get_passhash(username):
         if len(result) > 0: # If there is a value
             return result[0]
         else:
-            return "500", "User doesnt exist"
+            return 500, "User doesnt exist"
 
 def verify_user(userID):
     with sqlite3.connect(DB_NAME) as conn:
@@ -245,4 +245,13 @@ def get_upcoming_traps():
         new_results.append([trap[0], trap[1], trap[2]])     
     return new_results
 
-  
+def get_dc_tests():
+    # test_id, data_center, date, complete, result, evidence
+    with sqlite3.connect(DB_NAME) as conn:
+        result = conn.execute("SELECT * FROM data_center_tests ORDER BY date desc").fetchall()
+        return result
+
+def get_notifs(user_id):
+    with sqlite3.connect(DB_NAME) as conn:
+        result = conn.execute("SELECT sender, message FROM notifications WHERE too = ?", (user_id,)).fetchall()
+        return result

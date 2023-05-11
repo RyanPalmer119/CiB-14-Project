@@ -38,10 +38,12 @@ def api_login_test():
     """ Log In a User """
     body = json.loads(request.data) # Get Login Data
     src_ip = request.remote_addr # Get IP Address
-    logs.info(f"{src_ip} is logging in as { body['username'] }")
 
-    
-    userID, role, user_pass_hash = db_handler.get_passhash(body["username"]) # Get userID and Passhash from inputted Username
+    passhash = db_handler.get_passhash(body["username"]) # Get userID and Passhash from inputted Username
+    if passhash[0] == 500:
+        logs.warning(f"Login Unsuccessful for { body['username'] } from { src_ip } - Invalid Username")
+        return "Username or Password is Incorrect", 400
+    userID, role, user_pass_hash = passhash
     inputted_pass_hash = body["passhash"] # Get user inputted passhash
     
     if inputted_pass_hash == user_pass_hash: # If Valid
@@ -49,7 +51,7 @@ def api_login_test():
         return {"id": userID, "role": role}, 200 # Return UserID for UserID Cookie
     else: 
         # Invalid Login
-        logs.warning(f"Login Unsuccessful for { body['username'] } from { src_ip }")
+        logs.warning(f"{ src_ip }Login Unsuccessful for { body['username'] } from { src_ip }")
         return "Username or Password is Incorrect", 400
 
 @app.route("/api/new_user", methods=["POST"])

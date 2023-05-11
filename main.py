@@ -1,9 +1,11 @@
 """ Main Python File -- RUN THIS TO START APP"""
 PROXY = False
-PROD_MODE = True
+PROD_MODE = False
 # Import Dependencies
-from flask import Flask, request, render_template, redirect  # Flask Imports
+from flask import Flask, request, render_template, redirect, jsonify  # Flask Imports
 from utils.verify import verify_true_user  # Import utility modules
+from utils import export_utils
+import json
 
 import logging
 if PROXY:
@@ -25,8 +27,8 @@ app = Flask(
 )  # Serve the *static* folder as a static source
 
 # Load Additional Routes - Adds these to the current App
-from routes import db_routes, login_routes
-from utils.db_handler import get_all_app_names, get_upcoming_tests, get_app_overview, get_testing_entries, get_app, is_app_compliant, get_upcoming_traps, get_app_assignees, get_staff_name, get_trap
+from routes import db_routes, login_routes, app_routes, logs_route
+from utils.db_handler import get_all_app_names, get_upcoming_tests, get_app_overview, get_testing_entries, get_app, is_app_compliant, get_upcoming_traps, get_app_assignees, get_staff_name, get_trap, get_dc_tests, get_notifs
 
 @app.route("/")
 def index():
@@ -72,7 +74,8 @@ def app_dashboard():
             return redirect("/")
 
     src_ip = request.remote_addr
-    logs.info(f"{src_ip} - Accessed App Page")
+    logs.info(f"{src_ip} - Accessed App Dash as {name if PROD_MODE else 'PROD'}")
+    
     applications = get_all_app_names()
     upcoming_tests = get_upcoming_tests()
     upcoming_traps = get_upcoming_traps()
@@ -97,7 +100,7 @@ def app_team_details(app_id):
             return redirect("/")
 
     src_ip = request.remote_addr
-    logs.info(f"{src_ip} - Accessed App Details Page for {app_id}")
+    logs.info(f"{src_ip} - Accessed App Details Page for {app_id} as {name if PROD_MODE else 'PROD'}")
     return render_template("app_team/details.html", app_id=app_id)
 
 # || == == == == RESILIENCY STAFF SECTION == == == == ||
@@ -121,13 +124,27 @@ def res_dashboard():
             return redirect("/")
     
     src_ip = request.remote_addr
-    logs.info(f"{src_ip} - Accessed Res Page")
+    logs.info(f"{src_ip} - Accessed Res Page as {name if PROD_MODE else 'PROD'}")
     apps = get_app_overview()
     compliance = []
     for app in apps:
         compliance.append(is_app_compliant(app[0]))
     apps_compliance = zip(apps, compliance)
-    return render_template("res_team/dash.html", apps=apps_compliance, compliant=compliance.count(True), noncompliant=compliance.count(False))
+
+    dc_tests = []
+    all_dc_tests = get_dc_tests()[0:3]
+    for test in all_dc_tests:
+        # test_id, data_center, date, complete, result, evidence
+        test_id, _, date, complete, result, _ = test
+        dc_tests.append({
+            "id": test_id,
+            "date": date,
+            "complete": complete == "1",
+            "result": result == "1"
+        })
+    
+
+    return render_template("res_team/dash.html", apps=apps_compliance, dc_tests=dc_tests, compliant=compliance.count(True), noncompliant=compliance.count(False))
 
 @app.route("/res/details/<app_id>")
 def res_details(app_id):
@@ -148,7 +165,7 @@ def res_details(app_id):
             return redirect("/")
     
     src_ip = request.remote_addr
-    logs.info(f"{src_ip} - Accessed Res Details Page")
+    logs.info(f"{src_ip} - Accessed Res Details Page for {app_id} as {name if PROD_MODE else 'PROD'}")
     app_raw = get_app(app_id)[0]
     # app_id, app_name, primary_location, alt_location, data_center_id, trap_approved, trap_id
     _, _, trap_date_created, trap_status, _, _, _ = get_trap(app_raw[6])
@@ -234,6 +251,9 @@ def res_test_route(app_id):
             "name": get_staff_name(op_2),
         },
     }
+
+    src_ip = request.remote_addr
+    logs.info(f"{src_ip} - Accessed Res Tests Page for {app_id} as {name if PROD_MODE else 'PROD'}")
     
     return render_template("res_team/tests.html", app=app)
     
@@ -257,6 +277,8 @@ def op_dash():
         else:
             return redirect("/")
 
+    src_ip = request.remote_addr
+    logs.info(f"{src_ip} - Accessed Op Dash as {name if PROD_MODE else 'PROD'}")
     return render_template("op_team/dash.html")
 
 @app.route("/op/app/<app_id>")
@@ -320,8 +342,9 @@ def op_app(app_id):
         "tests": allTests
     }
 
-    
-    return render_template("op_team/app_detail.html")
+    src_ip = request.remote_addr
+    logs.info(f"{src_ip} - Accessed Op Details for {app_id} as {name if PROD_MODE else 'PROD'}")
+    return render_template("res_team/detail.html", app=app)
 
 
 
@@ -329,10 +352,30 @@ def op_app(app_id):
 def admin():
     return render_template("admin.html")
 
-@app.route("/trap_viewer")
-def trapview():
-  return render_template("trapview.html")
+@app.route("/trap_viewer/<app_id>")
+def trapview(app_id):
+    app_raw = get_app(app_id)[0]
+    app = {
+        "id": app_raw[0],
+        "name": app_raw[1],
+    }
+    src_ip = request.remote_addr
+    logs.info(f"{src_ip} - Accessed TRAP for {app_id}")
+    return render_template("trapview.html", app=app)
 
+@app.route("/notifs/<user_id>")
+def notifs(user_id):
+    user_notifs = get_notifs(user_id)
+    all_notifs = []
+    for notif in user_notifs:
+        all_notifs.append((get_staff_name(notif[0]), notif[0] , notif[1]))
+    return json.dumps(all_notifs)
+
+@app.route("/docs")
+def docs_page():
+    src_ip = request.remote_addr
+    logs.info(f"{src_ip} - Accessed Docs")
+    return render_template("docs/index.html")
 
 
 if PROXY:

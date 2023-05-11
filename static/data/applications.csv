@@ -11,7 +11,7 @@ app_id,app_name,primary_location,alt_location,data_center_id,trap_id,trap_approv
 10,DWK-PayMate,4,2,4,90,No
 11,DWK-SecureVault,1,2,1,91,Yes
 12,DWK-InvestmentServices,4,2,4,92,Yes
-13,DWK-FundManagement ,6,2,6,93,No
+13,DWK-FundManagement,6,2,6,93,No
 14,DWK-MobileApp,3,2,3,94,No
 15,DWK-QuickTrade,7,2,7,95,Yes
 16,DWK-Markets,1,9,1,96,Yes

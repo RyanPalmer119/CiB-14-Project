@@ -4,10 +4,10 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-2">
+            <div class="col-lg-2 pb-2">
                 <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="history.back()">Back</button>
             </div>
-            <div class="col-8">
+            <div class="col-lg-8 pb-2">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="searchBox" placeholder="Name of Application" value="{{ app.name }}">
                     <label for="floatingInput">Search</label>
@@ -18,7 +18,7 @@
     <hr>
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-lg-8 pb-2">
                 <div class="card card-body">
                     <div class="d-flex">
                         <div class="p-2 flex-grow-1">
@@ -26,9 +26,9 @@
                         </div>
                         <div class="p-2">
                             {% if app.trap.approved_bool %}
-                                <span class="badge bg-success fs-6">Compliant</span>
+                                <span class="badge bg-success text-wrap fs-6">Compliant</span>
                             {% else %}
-                                <span class="badge bg-danger fs-6">Non-Compliant</span>
+                                <span class="badge bg-danger text-wrap fs-6">Non-Compliant</span>
                             {% endif %}
                             
                         </div>
@@ -62,9 +62,9 @@
                                 <th>Trap Approved?</th>
                                 <td>
                                     {% if app.trap.approved_bool %}
-                                        <span class="badge bg-success">Approved</span>
+                                        <span class="badge bg-success text-wrap">Approved</span>
                                     {% else %}
-                                        <span class="badge bg-danger">Not Approved</span>
+                                        <span class="badge bg-danger text-wrap">Not Approved</span>
                                     {% endif %}
                                 </td>
                             </tr>
@@ -100,9 +100,9 @@
                                     <td>{{ test.scenario }}</td>
                                     <td>{{ test.date }}</td>
                                     {% if test.result %}
-                                        <td><span class="badge bg-success">Success</span></td>
+                                        <td><span class="badge bg-success text-wrap">Success</span></td>
                                     {% else %}
-                                        <td><span class="badge bg-danger">Fail</span></td>
+                                        <td><span class="badge bg-danger text-wrap">Fail</span></td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}    
@@ -110,26 +110,26 @@
                     </table>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 pb-2">
                 <div class="card card-body">
                     <h3>Application Assignment</h3>
                     <hr>
                     <h4>Application Team:</h4>
                     <table class="table table-striped table-hover">
                         <tr>
-                            <th>{{app.app_1.name}} <span class="badge bg-secondary">{{app.app_1.id}}</span></th> <!-- App Name 1 -->
+                            <th>{{app.app_1.name}} <span class="badge bg-secondary text-wrap">{{app.app_1.id}}</span></th> <!-- App Name 1 -->
                         </tr>
                         <tr>
-                            <th>{{app.app_2.name}} <span class="badge bg-secondary">{{app.app_2.id}}</span></th> <!-- App Name 2 -->
+                            <th>{{app.app_2.name}} <span class="badge bg-secondary text-wrap">{{app.app_2.id}}</span></th> <!-- App Name 2 -->
                         </tr>
                     </table>
                     <h4>Operate Team:</h4>
                     <table class="table table-striped table-hover">
                         <tr>
-                            <th>{{app.op_1.name}} <span class="badge bg-secondary">{{app.op_1.id}}</span></th> <!-- Op Name 1 -->
+                            <th>{{app.op_1.name}} <span class="badge bg-secondary text-wrap">{{app.op_1.id}}</span></th> <!-- Op Name 1 -->
                         </tr>
                         <tr>
-                            <th>{{app.op_2.name}} <span class="badge bg-secondary">{{app.op_2.id}}</span></th> <!-- Op Name 2 -->
+                            <th>{{app.op_2.name}} <span class="badge bg-secondary text-wrap">{{app.op_2.id}}</span></th> <!-- Op Name 2 -->
                         </tr>
                     </table>
                 </div>
@@ -148,9 +148,9 @@
                             <td>{{app.trap.date}}</td>
                             <td>
                                 {% if app.trap.approved_bool %}
-                                    <span class="badge bg-success">Approved</span>
+                                    <span class="badge bg-success text-wrap">Approved</span>
                                 {% else %}
-                                    <span class="badge bg-danger">Not Approved</span>
+                                    <span class="badge bg-danger text-wrap">Not Approved</span>
                                 {% endif %}
                             </td>
                             <td><button class="btn btn-sm btn-success">View</button></td>

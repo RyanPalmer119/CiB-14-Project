@@ -7,142 +7,151 @@
 {% endblock %}
 
 {% block content %}
-    <input type="text" value="{{ app.name }}"id="app_name" hidden disabled> 
-    <div class="row">
-        <div class="col-1">
-            <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="history.back()">Back</button>
+    <div class="d-none d-md-block">
+        <input type="text" value="{{ app.name }}"id="app_name" hidden disabled> 
+        <div class="d-flex">
+            <div class="p-2">
+                <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="history.back()">Back</button>
+            </div>
+            <div class="p-2">
+                <button type="button" class="btn btn-success" style="width: 100%;" onclick="export_trap({{app.id}})">Export TRAP</button>
+            </div>
+            <div class="p-2">
+                <h1>Edit TRAP</h1>
+            </div>
         </div>
-        <div class="col-1">
-            <button type="button" class="btn btn-success" style="width: 100%;" onclick="export_trap({{app.id}})">Export TRAP</button>
-        </div>
-        <div class="col-8">
-            <h1 class="p-2">Edit TRAP</h1>
+        <table id="TrapEditorTable" class="table table-striped table-hover">
+            <thead>
+              <tr>
+                  <th style="width: 20%">Activity</th>
+                  <th style="width: 70%">Task</th>
+                  <th style="width: 5%" class="text-center">Planned</th>
+                  <th style="width: 5%" class="text-center">Unplanned</th>
+              </tr>
+          </thead>
+          <tbody id="tbody_trap_table">
+          <tr>
+            <td rowspan=3>Pre-Event Planning</td>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+            <td rowspan=3>Pre-Declaration</td>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td rowspan=4>Source Shutdown</td>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td rowspan=8>Starting Target</td>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td rowspan=4>Environment Verification</td>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+          <tr>
+            <td class="trap_details"></td>
+            <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
+            <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="d-lg-none">
+        <div class="alert alert-danger" role="alert">
+            <h3>This TRAP View is not available on Mobile</h3>
+            Due to screen size constraints, this view cannot be shown on mobile devices.<br>
+            However, in future iterations, a Mobile TRAP View can be implemented if required.
         </div>
     </div>
-    <table id="TrapEditorTable" class="table table-striped table-hover">
-        <thead>
-          <tr>
-              <th style="width: 20%">Activity</th>
-              <th style="width: 70%">Task</th>
-              <th style="width: 5%" class="text-center">Planned</th>
-              <th style="width: 5%" class="text-center">Unplanned</th>
-          </tr>
-      </thead>
-      <tbody id="tbody_trap_table">
-      <tr>
-        <td rowspan=3>Pre-Event Planning</td>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-        <td rowspan=3>Pre-Declaration</td>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td rowspan=4>Source Shutdown</td>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td rowspan=8>Starting Target</td>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td rowspan=4>Environment Verification</td>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-      <tr>
-        <td class="trap_details"></td>
-        <td class="text-center"><input type="checkbox" id="yes" name="fav_language" value="yes"></td>
-        <td class="text-center"><input type="checkbox" id="no" name="fav_language" value="no"></td>
-      </tr>
-    </tbody>
-  </table>
 {% endblock %}

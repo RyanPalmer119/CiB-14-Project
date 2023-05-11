@@ -1,6 +1,6 @@
 """ Main Python File -- RUN THIS TO START APP"""
 PROXY = False
-PROD_MODE = False
+PROD_MODE = True
 # Import Dependencies
 from flask import Flask, request, render_template, redirect, jsonify  # Flask Imports
 from utils.verify import verify_true_user  # Import utility modules
@@ -376,6 +376,8 @@ def docs_page():
     src_ip = request.remote_addr
     logs.info(f"{src_ip} - Accessed Docs")
     return render_template("docs/index.html")
+
+    
 
 
 if PROXY:

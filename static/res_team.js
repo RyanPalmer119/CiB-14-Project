@@ -3,7 +3,7 @@ function open_details(app) {
 }
 
 function open_report(id, name) {
-    alert(`ID: ${id} & Name: ${name}`)
+    alert(`File Downloaded: app_documents/${name}/test_report.csv`)
     let xhttp = new XMLHttpRequest();
     xhttp.open('POST', '/export_tests_to_excel', true);
     let data = {"id": id, "app_name": name};

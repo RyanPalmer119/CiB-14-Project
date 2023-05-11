@@ -2,7 +2,7 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 import pandas as pd
 import lxml
-
+from flask import send_file
 def as_text(value):
     if value is None:
         return ""
@@ -58,7 +58,7 @@ def exportTRAP(data, folder_location):
   # "Environment Verification":[to_csv_array[18], to_csv_array[19], to_csv_array[20], to_csv_array[22]]
   # }
   dataframe = pd.DataFrame(to_csv_array)
-  dataframe.to_csv(folder_location, index=False, header=False)
-  print(dataframe)
+  return dataframe.to_csv(folder_location, index=False, header=False)
+
   
   

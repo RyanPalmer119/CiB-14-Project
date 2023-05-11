@@ -30,7 +30,7 @@ function fillTrapTable(trapObj) {
 
 let export_btn = document.getElementById("export_trap")
 export_btn.addEventListener("click", function() {
-  console.log(window.location.href)
+  export_trap()
 })
 
 function getTableCells(table){
@@ -50,12 +50,14 @@ function getTableCells(table){
 }
 
 function export_trap() {
-  console.log(getTableCells("tbody_trap_table"))
-  var app_name = document.getElementById("app_name").value
-  let xhttp = new XMLHttpRequest();
-  xhttp.open('POST', '/export_TRAP', true);
-  let data = {"data":getTableCells("tbody_trap_table"), "app_name":app_name};
-  let dataJSON = JSON.stringify(data);
-  xhttp.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
-  xhttp.send(dataJSON);
+    console.log(getTableCells("tbody_trap_table"))
+    var app_name = document.getElementById("app_name").value
+    let xhttp = new XMLHttpRequest();
+    xhttp.open('POST', '/export_TRAP', true);
+    let data = {"data":getTableCells("tbody_trap_table"), "app_name":app_name};
+    let dataJSON = JSON.stringify(data);
+    xhttp.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+    xhttp.send(dataJSON);
+    window.open(`/dl_TRAP/${app_name}`)
+
 }
